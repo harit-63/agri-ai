@@ -5,7 +5,7 @@ const cors = require('cors')
 const axios = require('axios')
 
 const app = express()
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const MANDI_API_URL =
   'https://api.data.gov.in/resource/35985678-0d79-46b4-9ed6-6f13308a1d24'
@@ -96,6 +96,6 @@ app.get('/api/mandi', async (req, res) => {
   }
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Agri AI Backend running at http://localhost:${PORT}`)
 })
